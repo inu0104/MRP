@@ -1,0 +1,6 @@
+{
+  "method": "temperature_scaling",
+  "loss": "nll",
+  "max_iter": 80,
+  "lr": 0.2
+}

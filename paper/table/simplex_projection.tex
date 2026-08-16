@@ -1,0 +1,59 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{1.9pt}
+\renewcommand{\arraystretch}{0.92}
+\caption{Top-label simplex projection analysis. Base is the original calibrated vector, and MRC is the MRP-induced power-temperature projection. For Fixed ECE, Top ECE, NLL, and Brier, \(\Delta\) is MRC minus Base. Blue bold negative \(\Delta\) values indicate improvements, and lower is better for all four metrics. The \(q<1/K\) column reports infeasible targets. Solved gives exact rates.}
+\label{tab:simplex_projection}
+\newcommand{\mrcimprove}[1]{\textcolor{blue}{\textbf{#1}}}
+\begin{tabular}{lclcccccccccccccc}
+\toprule
+\multirow{2}{*}{Dataset} & \multirow{2}{*}{\(K\)} & \multirow{2}{*}{Cal.} & \multicolumn{3}{c}{Fixed ECE\(\downarrow\)} & \multicolumn{3}{c}{Top ECE\(\downarrow\)} & \multicolumn{3}{c}{NLL\(\downarrow\)} & \multicolumn{3}{c}{Brier\(\downarrow\)} & \multirow{2}{*}{\(q<1/K\)} & \multirow{2}{*}{Solved} \\
+\cmidrule(lr){4-6}\cmidrule(lr){7-9}\cmidrule(lr){10-12}\cmidrule(lr){13-15}
+ & & & Base & MRC & \(\Delta\) & Base & MRC & \(\Delta\) & Base & MRC & \(\Delta\) & Base & MRC & \(\Delta\) & & \\
+\midrule
+\multirow{6}{*}{\shortstack{ESCI-Rerank\\US}} & \multirow{6}{*}{2} & Uncal. & 0.1835 & 0.0494 & \mrcimprove{-0.1341} & 0.1835 & 0.0494 & \mrcimprove{-0.1341} & 0.8323 & 0.6543 & \mrcimprove{-0.1780} & 0.5722 & 0.4620 & \mrcimprove{-0.1103} & 37.6\% & 100.0\% \\
+ &  & TS & 0.0131 & 0.0482 & +0.0351 & 0.0131 & 0.0482 & +0.0351 & 0.6793 & 0.6541 & \mrcimprove{-0.0252} & 0.4863 & 0.4618 & \mrcimprove{-0.0245} & 37.6\% & 100.0\% \\
+ &  & DIAG & 0.0111 & 0.0476 & +0.0365 & 0.0111 & 0.0476 & +0.0365 & 0.6795 & 0.6538 & \mrcimprove{-0.0257} & 0.4865 & 0.4616 & \mrcimprove{-0.0249} & 37.7\% & 100.0\% \\
+ &  & Spline & 0.0153 & 0.0413 & +0.0260 & 0.0114 & 0.0452 & +0.0338 & 0.6802 & 0.6558 & \mrcimprove{-0.0244} & 0.4872 & 0.4635 & \mrcimprove{-0.0237} & 37.7\% & 91.7\% \\
+ &  & h-cal & 0.1122 & 0.0506 & \mrcimprove{-0.0616} & 0.1122 & 0.0506 & \mrcimprove{-0.0616} & 0.7338 & 0.6541 & \mrcimprove{-0.0797} & 0.5242 & 0.4618 & \mrcimprove{-0.0624} & 37.4\% & 100.0\% \\
+ &  & SMART & 0.0074 & 0.0478 & +0.0404 & 0.0074 & 0.0478 & +0.0404 & 0.6802 & 0.6543 & \mrcimprove{-0.0259} & 0.4872 & 0.4620 & \mrcimprove{-0.0252} & 38.5\% & 100.0\% \\
+\midrule
+\multirow{6}{*}{\shortstack{MSLR-\\WEB10K}} & \multirow{6}{*}{5} & Uncal. & 0.2922 & 0.0703 & \mrcimprove{-0.2219} & 0.2922 & 0.0762 & \mrcimprove{-0.2160} & 2.1775 & 1.2081 & \mrcimprove{-0.9694} & 0.8695 & 0.6274 & \mrcimprove{-0.2422} & 31.9\% & 100.0\% \\
+ &  & TS & 0.0697 & 0.0681 & \mrcimprove{-0.0016} & 0.0697 & 0.0750 & +0.0052 & 1.4052 & 1.2090 & \mrcimprove{-0.1963} & 0.7302 & 0.6262 & \mrcimprove{-0.1039} & 32.1\% & 100.0\% \\
+ &  & DIAG & 0.0964 & 0.0785 & \mrcimprove{-0.0178} & 0.0964 & 0.0857 & \mrcimprove{-0.0107} & 1.3380 & 1.3085 & \mrcimprove{-0.0294} & 0.7156 & 0.6321 & \mrcimprove{-0.0835} & 32.0\% & 100.0\% \\
+ &  & Spline & 0.0107 & 0.0545 & +0.0438 & 0.0950 & 0.1151 & +0.0201 & 1.4763 & 1.4506 & \mrcimprove{-0.0256} & 0.7481 & 0.6973 & \mrcimprove{-0.0508} & 31.9\% & 57.9\% \\
+ &  & h-cal & 0.0549 & 0.0679 & +0.0130 & 0.0548 & 0.0747 & +0.0199 & 1.4231 & 1.2307 & \mrcimprove{-0.1924} & 0.7330 & 0.6316 & \mrcimprove{-0.1014} & 32.0\% & 99.9\% \\
+ &  & SMART & 0.1137 & 0.0709 & \mrcimprove{-0.0428} & 0.1137 & 0.0772 & \mrcimprove{-0.0365} & 1.3301 & 1.2178 & \mrcimprove{-0.1123} & 0.6998 & 0.6296 & \mrcimprove{-0.0702} & 32.0\% & 100.0\% \\
+\midrule
+\multirow{6}{*}{\shortstack{Amazon\\ESCI}} & \multirow{6}{*}{4} & Uncal. & 0.0470 & 0.0136 & \mrcimprove{-0.0334} & 0.0470 & 0.0194 & \mrcimprove{-0.0276} & 0.7132 & 0.7191 & +0.0060 & 0.3708 & 0.3496 & \mrcimprove{-0.0212} & 7.2\% & 100.0\% \\
+ &  & TS & 0.0469 & 0.0135 & \mrcimprove{-0.0334} & 0.0469 & 0.0194 & \mrcimprove{-0.0275} & 0.7107 & 0.7192 & +0.0085 & 0.3710 & 0.3496 & \mrcimprove{-0.0213} & 7.2\% & 100.0\% \\
+ &  & DIAG & 0.0453 & 0.0134 & \mrcimprove{-0.0318} & 0.0453 & 0.0193 & \mrcimprove{-0.0260} & 0.7103 & 0.7230 & +0.0126 & 0.3709 & 0.3497 & \mrcimprove{-0.0213} & 7.2\% & 100.0\% \\
+ &  & Spline & 0.0188 & 0.0122 & \mrcimprove{-0.0066} & 0.0178 & 0.0177 & 0.0000 & 0.7012 & 0.7078 & +0.0066 & 0.3672 & 0.3497 & \mrcimprove{-0.0176} & 7.0\% & 98.8\% \\
+ &  & h-cal & 0.0400 & 0.0137 & \mrcimprove{-0.0263} & 0.0400 & 0.0192 & \mrcimprove{-0.0208} & 0.7134 & 0.7090 & \mrcimprove{-0.0043} & 0.3700 & 0.3495 & \mrcimprove{-0.0205} & 7.1\% & 100.0\% \\
+ &  & SMART & 0.0206 & 0.0140 & \mrcimprove{-0.0066} & 0.0206 & 0.0197 & \mrcimprove{-0.0010} & 0.7024 & 0.7192 & +0.0167 & 0.3674 & 0.3496 & \mrcimprove{-0.0179} & 7.2\% & 100.0\% \\
+\midrule
+\multirow{6}{*}{SciDocs} & \multirow{6}{*}{2} & Uncal. & 0.2097 & 0.0088 & \mrcimprove{-0.2008} & 0.2097 & 0.0103 & \mrcimprove{-0.1993} & 0.9131 & 0.6788 & \mrcimprove{-0.2343} & 0.5962 & 0.4860 & \mrcimprove{-0.1102} & 13.0\% & 100.0\% \\
+ &  & TS & 0.0139 & 0.0074 & \mrcimprove{-0.0065} & 0.0139 & 0.0078 & \mrcimprove{-0.0061} & 0.6818 & 0.6789 & \mrcimprove{-0.0029} & 0.4887 & 0.4862 & \mrcimprove{-0.0025} & 8.6\% & 100.0\% \\
+ &  & DIAG & 0.0081 & 0.0070 & \mrcimprove{-0.0010} & 0.0081 & 0.0073 & \mrcimprove{-0.0008} & 0.6815 & 0.6788 & \mrcimprove{-0.0027} & 0.4884 & 0.4861 & \mrcimprove{-0.0023} & 9.0\% & 100.0\% \\
+ &  & Spline & 0.0152 & 0.0127 & \mrcimprove{-0.0024} & 0.0136 & 0.0103 & \mrcimprove{-0.0033} & 0.6819 & 0.6802 & \mrcimprove{-0.0017} & 0.4889 & 0.4872 & \mrcimprove{-0.0016} & 6.8\% & 89.0\% \\
+ &  & h-cal & 0.1417 & 0.0054 & \mrcimprove{-0.1363} & 0.1417 & 0.0059 & \mrcimprove{-0.1358} & 0.7755 & 0.6791 & \mrcimprove{-0.0964} & 0.5434 & 0.4864 & \mrcimprove{-0.0571} & 10.9\% & 100.0\% \\
+ &  & SMART & 0.0162 & 0.0119 & \mrcimprove{-0.0043} & 0.0162 & 0.0126 & \mrcimprove{-0.0036} & 0.6812 & 0.6797 & \mrcimprove{-0.0016} & 0.4882 & 0.4868 & \mrcimprove{-0.0014} & 8.8\% & 100.0\% \\
+\midrule
+\multirow{6}{*}{WANDS} & \multirow{6}{*}{3} & Uncal. & 0.0059 & 0.0077 & +0.0018 & 0.0059 & 0.0081 & +0.0022 & 0.5506 & 0.5517 & +0.0011 & 0.3140 & 0.3124 & \mrcimprove{-0.0016} & 1.0\% & 100.0\% \\
+ &  & TS & 0.0058 & 0.0077 & +0.0019 & 0.0058 & 0.0080 & +0.0022 & 0.5506 & 0.5517 & +0.0011 & 0.3140 & 0.3124 & \mrcimprove{-0.0016} & 1.0\% & 100.0\% \\
+ &  & DIAG & 0.0058 & 0.0075 & +0.0017 & 0.0058 & 0.0078 & +0.0020 & 0.5504 & 0.5521 & +0.0017 & 0.3140 & 0.3124 & \mrcimprove{-0.0016} & 1.0\% & 100.0\% \\
+ &  & Spline & 0.0086 & 0.0089 & +0.0004 & 0.0078 & 0.0085 & +0.0007 & 0.5509 & 0.5518 & +0.0009 & 0.3143 & 0.3129 & \mrcimprove{-0.0015} & 1.2\% & 98.1\% \\
+ &  & h-cal & 0.0095 & 0.0082 & \mrcimprove{-0.0013} & 0.0095 & 0.0086 & \mrcimprove{-0.0009} & 0.5506 & 0.5522 & +0.0017 & 0.3140 & 0.3125 & \mrcimprove{-0.0016} & 1.1\% & 100.0\% \\
+ &  & SMART & 0.0061 & 0.0080 & +0.0018 & 0.0061 & 0.0083 & +0.0022 & 0.5503 & 0.5518 & +0.0015 & 0.3140 & 0.3125 & \mrcimprove{-0.0015} & 1.0\% & 100.0\% \\
+\midrule
+\multirow{6}{*}{\shortstack{Alloprof-\\Rerank}} & \multirow{6}{*}{2} & Uncal. & 0.1501 & 0.0730 & \mrcimprove{-0.0771} & 0.1501 & 0.0757 & \mrcimprove{-0.0744} & 0.6623 & 0.3447 & \mrcimprove{-0.3176} & 0.3752 & 0.2155 & \mrcimprove{-0.1597} & 26.3\% & 100.0\% \\
+ &  & TS & 0.0437 & 0.0740 & +0.0303 & 0.0437 & 0.0725 & +0.0288 & 0.4668 & 0.3398 & \mrcimprove{-0.1270} & 0.3134 & 0.2141 & \mrcimprove{-0.0993} & 24.9\% & 100.0\% \\
+ &  & DIAG & 0.0439 & 0.0746 & +0.0307 & 0.0439 & 0.0732 & +0.0293 & 0.4670 & 0.3398 & \mrcimprove{-0.1272} & 0.3136 & 0.2141 & \mrcimprove{-0.0995} & 24.9\% & 100.0\% \\
+ &  & Spline & 0.0380 & 0.0704 & +0.0324 & 0.0370 & 0.0676 & +0.0306 & 0.4704 & 0.3452 & \mrcimprove{-0.1251} & 0.3130 & 0.2181 & \mrcimprove{-0.0949} & 23.9\% & 97.1\% \\
+ &  & h-cal & 0.1055 & 0.0755 & \mrcimprove{-0.0301} & 0.1055 & 0.0741 & \mrcimprove{-0.0315} & 0.5298 & 0.3417 & \mrcimprove{-0.1881} & 0.3418 & 0.2147 & \mrcimprove{-0.1270} & 24.8\% & 100.0\% \\
+ &  & SMART & 0.0143 & 0.0745 & +0.0602 & 0.0143 & 0.0740 & +0.0598 & 0.4589 & 0.3400 & \mrcimprove{-0.1189} & 0.3079 & 0.2140 & \mrcimprove{-0.0939} & 25.2\% & 100.0\% \\
+\bottomrule
+\end{tabular}
+\renewcommand{\arraystretch}{1.0}
+\end{table*}

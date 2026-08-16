@@ -1,0 +1,26 @@
+[project]
+name = "cikm2026-calibration-reliability"
+version = "0.1.0"
+description = "Post-calibration reliability reranking experiments for CIKM 2026."
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn",
+  "torch",
+  "datasets",
+  "matplotlib",
+]
+
+[project.optional-dependencies]
+strong = [
+  "lightgbm",
+  "transformers",
+]
+
+[tool.setuptools]
+packages = ["calibration"]
+
+[tool.ruff]
+line-length = 120

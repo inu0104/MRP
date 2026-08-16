@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Label-conditioned reliability spread. Within each calibrated-confidence group, we measure how much \(Z-\hat c^{\mathcal{A}}\) changes across predicted labels. A large spread indicates that equal-confidence predictions can have label-dependent correctness reliability. The random column is the 95th percentile after shuffling labels within each group.}
+\label{tab:label_conditional_residual}
+\setlength{\tabcolsep}{3.8pt}
+\begin{tabular}{lrrrr}
+\toprule
+Dataset & Label spread & Random & Ratio & Seeds \\
+\midrule
+ESCI-Rerank-US & 26.7pp & 3.8pp & 6.9$\times$ & 18/18 \\
+MSLR-WEB10K & 59.8pp & 4.3pp & 13.8$\times$ & 18/18 \\
+Amazon ESCI & 60.8pp & 8.1pp & 7.5$\times$ & 18/18 \\
+SciDocs & 6.6pp & 4.2pp & 1.6$\times$ & 18/18 \\
+WANDS & 14.3pp & 3.0pp & 4.8$\times$ & 18/18 \\
+Alloprof-Rerank & 57.3pp & 4.9pp & 11.6$\times$ & 18/18 \\
+\bottomrule
+\end{tabular}
+\end{table}

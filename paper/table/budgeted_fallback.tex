@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Budgeted fallback simulation. At automatic coverage \(\tau\), each reliability score keeps the lowest-risk \(\tau\) fraction for automatic use and routes the remaining highest-risk predictions to fallback or review. Values compare MRP with the no-projection confidence baseline \(\hat{q}_{\varnothing}^{\mathcal{A}}=\hat{c}^{\mathcal{A}}\). Positive values indicate a better reliability reranking.}
+\label{tab:budgeted_fallback}
+\setlength{\tabcolsep}{3.8pt}
+\begin{tabular}{@{}p{0.31\linewidth}rrrr@{}}
+\toprule
+\multirow{2}{*}{Dataset} & \multicolumn{4}{c}{\(\Delta\mathrm{SelAcc}@\tau\)} \\
+\cmidrule(l){2-5}
+ & 10\% & 50\% & 70\% & 90\% \\
+\midrule
+ESCI-Rerank-US & \textbf{+0.043} & \textbf{+0.082} & \textbf{+0.056} & \textbf{+0.016} \\
+MSLR-WEB10K & \textbf{+0.331} & \textbf{+0.174} & \textbf{+0.113} & \textbf{+0.028} \\
+Amazon ESCI & \textbf{+0.003} & \textbf{+0.007} & \textbf{+0.014} & \textbf{+0.030} \\
+SciDocs & \textbf{+0.074} & -0.003 & -0.003 & -0.001 \\
+WANDS & \textbf{+0.005} & \textbf{+0.002} & \textbf{+0.004} & \textbf{+0.004} \\
+Alloprof-Rerank & +0.000 & \textbf{+0.050} & \textbf{+0.101} & \textbf{+0.041} \\
+\midrule
+\textbf{Average} & \textbf{+0.076} & \textbf{+0.052} & \textbf{+0.047} & \textbf{+0.020} \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,11 @@
+{
+  "method": "hcal",
+  "segment": 100,
+  "epsilon": 1e-20,
+  "window": 200,
+  "loss_weight": 100000.0,
+  "epochs": 250,
+  "patience": 50,
+  "lr": 0.005,
+  "batch_size": 5000
+}

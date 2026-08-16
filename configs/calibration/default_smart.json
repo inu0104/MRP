@@ -1,0 +1,9 @@
+{
+  "method": "smart",
+  "loss": "nll",
+  "hidden_dim": 16,
+  "num_layers": 2,
+  "epochs": 300,
+  "patience": 50,
+  "lr": 0.005
+}

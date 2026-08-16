@@ -1,0 +1,58 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments, tools, and private caches
+.local/
+.envs/
+.mamba-root/
+.pyuser/
+.tools/
+.vscode/
+.idea/
+
+# Large datasets, downloaded code archives, and third-party source drops
+data/
+external/
+cache/
+.cache/
+.hf_cache/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Large or regenerable experiment outputs
+runs/
+results/
+plots/
+wandb/
+mlruns/
+
+# Large binary artifacts
+*.pt
+*.pth
+*.pth.tar
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# LaTeX build products
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Paper-facing tables and figures are committed under paper/.

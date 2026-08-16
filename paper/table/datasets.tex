@@ -1,0 +1,47 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Datasets used in the relevance prediction experiments.}
+\label{tab:datasets}
+\begin{tabular}{llcll}
+\toprule
+Dataset & Domain & \(K\) & Labels & Task \\
+\midrule
+Amazon ESCI~\citep{reddy2022shopping}
+& E-commerce search
+& 4
+& Exact/Substitute/Complement/Irrelevant
+& Query-product relevance classification \\
+\addlinespace[2pt]
+MSLR-WEB10K~\citep{microsoft2010mslr}
+& Web search
+& 5
+& Relevance grades 0--4
+& Learning-to-rank relevance prediction \\
+\addlinespace[2pt]
+Alloprof-Rerank~\citep{lefebvre2023alloprof}
+& QA retrieval
+& 2
+& Relevant/Non-relevant
+& Question-document relevance reranking \\
+\addlinespace[2pt]
+ESCI-Rerank-US~\citep{reddy2022shopping}
+& E-commerce reranking
+& 2
+& Relevant/Non-relevant
+& Query-product candidate reranking \\
+\addlinespace[2pt]
+WANDS~\citep{chen2022wands}
+& E-commerce search
+& 3
+& Exact/Partial/Irrelevant
+& Product search relevance prediction \\
+\addlinespace[2pt]
+SciDocs~\citep{cohan2020specter,thakur2021beir}
+& Scientific retrieval
+& 2
+& Relevant/Non-relevant
+& Candidate document reranking \\
+\bottomrule
+\end{tabular}
+\end{table*}

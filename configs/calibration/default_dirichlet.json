@@ -1,0 +1,6 @@
+{
+  "method": "dirichlet",
+  "max_iter": 200,
+  "lr": 0.1,
+  "weight_decay": 0.001
+}

@@ -1,0 +1,56 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption{Post-calibration reliability reranking results under the fixed-decision protocol. Acc. and ECE are base-calibrator values and are unchanged by MRP. Reliability metrics compare the confidence baseline \(\hat q=\hat c^{\mathcal{A}}\) with MRP. Blue bold \(\Delta\) values indicate improvements in the direction of each metric.}
+\label{tab:main_mrp}
+\setlength{\tabcolsep}{3.2pt}
+\newcommand{\improve}[1]{\textcolor{blue}{\textbf{#1}}}
+\begin{tabular}{llcc|ccc|ccc|ccc}
+\toprule
+\multirow{2}{*}{Dataset} & \multirow{2}{*}{Calibrator} & \multirow{2}{*}{Acc.} & \multirow{2}{*}{ECE} & \multicolumn{3}{c|}{\(\mathrm{NLL}_{\mathrm{correct}}\downarrow\)} & \multicolumn{3}{c|}{AUPR-Error$\uparrow$} & \multicolumn{3}{c}{AURC$\downarrow$} \\
+ & & & & Conf. & MRP & $\Delta$ & Conf. & MRP & $\Delta$ & Conf. & MRP & $\Delta$ \\
+\midrule
+\multirow{6}{*}{\shortstack{ESCI-Rerank\\US}} & Uncal. & 0.571 & 0.183 & 0.832{\tiny $\pm$ 0.000} & 0.647{\tiny $\pm$ 0.000} & \improve{-0.186} & 0.462{\tiny $\pm$ 0.000} & 0.558{\tiny $\pm$ 0.000} & \improve{+0.097} & 0.385{\tiny $\pm$ 0.000} & 0.331{\tiny $\pm$ 0.000} & \improve{-0.053} \\
+ & TS & 0.571 & 0.013 & 0.679{\tiny $\pm$ 0.000} & 0.646{\tiny $\pm$ 0.000} & \improve{-0.033} & 0.462{\tiny $\pm$ 0.000} & 0.558{\tiny $\pm$ 0.000} & \improve{+0.097} & 0.385{\tiny $\pm$ 0.000} & 0.331{\tiny $\pm$ 0.000} & \improve{-0.053} \\
+ & DIAG & 0.571 & 0.011 & 0.679{\tiny $\pm$ 0.000} & 0.646{\tiny $\pm$ 0.000} & \improve{-0.033} & 0.462{\tiny $\pm$ 0.000} & 0.558{\tiny $\pm$ 0.000} & \improve{+0.097} & 0.385{\tiny $\pm$ 0.000} & 0.332{\tiny $\pm$ 0.000} & \improve{-0.053} \\
+ & Spline & 0.571 & 0.015 & 0.680{\tiny $\pm$ 0.000} & 0.646{\tiny $\pm$ 0.000} & \improve{-0.034} & 0.466{\tiny $\pm$ 0.003} & 0.563{\tiny $\pm$ 0.002} & \improve{+0.097} & 0.387{\tiny $\pm$ 0.001} & 0.332{\tiny $\pm$ 0.001} & \improve{-0.055} \\
+ & h-cal & 0.571 & 0.112 & 0.734{\tiny $\pm$ 0.000} & 0.646{\tiny $\pm$ 0.000} & \improve{-0.087} & 0.462{\tiny $\pm$ 0.000} & 0.558{\tiny $\pm$ 0.000} & \improve{+0.097} & 0.385{\tiny $\pm$ 0.000} & 0.331{\tiny $\pm$ 0.000} & \improve{-0.053} \\
+ & SMART & 0.571 & 0.007 & 0.680{\tiny $\pm$ 0.001} & 0.647{\tiny $\pm$ 0.000} & \improve{-0.034} & 0.462{\tiny $\pm$ 0.000} & 0.558{\tiny $\pm$ 0.000} & \improve{+0.097} & 0.385{\tiny $\pm$ 0.000} & 0.332{\tiny $\pm$ 0.000} & \improve{-0.054} \\
+\midrule
+\multirow{6}{*}{\shortstack{MSLR-\\WEB10K}} & Uncal. & 0.394 & 0.292 & 1.387{\tiny $\pm$ 0.000} & 0.450{\tiny $\pm$ 0.001} & \improve{-0.937} & 0.653{\tiny $\pm$ 0.000} & 0.906{\tiny $\pm$ 0.000} & \improve{+0.252} & 0.605{\tiny $\pm$ 0.000} & 0.344{\tiny $\pm$ 0.000} & \improve{-0.261} \\
+ & TS & 0.394 & 0.070 & 0.684{\tiny $\pm$ 0.000} & 0.448{\tiny $\pm$ 0.001} & \improve{-0.236} & 0.678{\tiny $\pm$ 0.000} & 0.906{\tiny $\pm$ 0.000} & \improve{+0.229} & 0.557{\tiny $\pm$ 0.000} & 0.343{\tiny $\pm$ 0.000} & \improve{-0.214} \\
+ & DIAG & 0.394 & 0.096 & 0.651{\tiny $\pm$ 0.000} & 0.453{\tiny $\pm$ 0.001} & \improve{-0.198} & 0.743{\tiny $\pm$ 0.001} & 0.905{\tiny $\pm$ 0.000} & \improve{+0.162} & 0.466{\tiny $\pm$ 0.002} & 0.345{\tiny $\pm$ 0.000} & \improve{-0.120} \\
+ & Spline & 0.394 & 0.011 & 0.663{\tiny $\pm$ 0.000} & 0.469{\tiny $\pm$ 0.000} & \improve{-0.193} & 0.673{\tiny $\pm$ 0.001} & 0.889{\tiny $\pm$ 0.001} & \improve{+0.216} & 0.547{\tiny $\pm$ 0.000} & 0.380{\tiny $\pm$ 0.001} & \improve{-0.167} \\
+ & h-cal & 0.394 & 0.055 & 0.685{\tiny $\pm$ 0.000} & 0.448{\tiny $\pm$ 0.001} & \improve{-0.237} & 0.667{\tiny $\pm$ 0.000} & 0.906{\tiny $\pm$ 0.000} & \improve{+0.239} & 0.555{\tiny $\pm$ 0.000} & 0.343{\tiny $\pm$ 0.000} & \improve{-0.212} \\
+ & SMART & 0.394 & 0.114 & 0.637{\tiny $\pm$ 0.001} & 0.456{\tiny $\pm$ 0.002} & \improve{-0.180} & 0.723{\tiny $\pm$ 0.004} & 0.902{\tiny $\pm$ 0.002} & \improve{+0.179} & 0.457{\tiny $\pm$ 0.002} & 0.357{\tiny $\pm$ 0.003} & \improve{-0.099} \\
+\midrule
+\multirow{6}{*}{\shortstack{Amazon\\ESCI}} & Uncal. & 0.764 & 0.047 & 0.528{\tiny $\pm$ 0.000} & 0.468{\tiny $\pm$ 0.001} & \improve{-0.060} & 0.391{\tiny $\pm$ 0.000} & 0.525{\tiny $\pm$ 0.002} & \improve{+0.133} & 0.161{\tiny $\pm$ 0.000} & 0.151{\tiny $\pm$ 0.000} & \improve{-0.010} \\
+ & TS & 0.764 & 0.047 & 0.526{\tiny $\pm$ 0.000} & 0.468{\tiny $\pm$ 0.001} & \improve{-0.058} & 0.391{\tiny $\pm$ 0.000} & 0.524{\tiny $\pm$ 0.002} & \improve{+0.133} & 0.161{\tiny $\pm$ 0.000} & 0.151{\tiny $\pm$ 0.000} & \improve{-0.010} \\
+ & DIAG & 0.764 & 0.045 & 0.525{\tiny $\pm$ 0.000} & 0.468{\tiny $\pm$ 0.001} & \improve{-0.057} & 0.391{\tiny $\pm$ 0.000} & 0.524{\tiny $\pm$ 0.002} & \improve{+0.133} & 0.161{\tiny $\pm$ 0.000} & 0.151{\tiny $\pm$ 0.000} & \improve{-0.010} \\
+ & Spline & 0.764 & 0.019 & 0.516{\tiny $\pm$ 0.001} & 0.468{\tiny $\pm$ 0.001} & \improve{-0.048} & 0.391{\tiny $\pm$ 0.000} & 0.523{\tiny $\pm$ 0.003} & \improve{+0.132} & 0.161{\tiny $\pm$ 0.001} & 0.151{\tiny $\pm$ 0.001} & \improve{-0.010} \\
+ & h-cal & 0.764 & 0.040 & 0.528{\tiny $\pm$ 0.003} & 0.468{\tiny $\pm$ 0.001} & \improve{-0.060} & 0.391{\tiny $\pm$ 0.000} & 0.524{\tiny $\pm$ 0.001} & \improve{+0.133} & 0.161{\tiny $\pm$ 0.000} & 0.151{\tiny $\pm$ 0.000} & \improve{-0.010} \\
+ & SMART & 0.764 & 0.021 & 0.516{\tiny $\pm$ 0.000} & 0.468{\tiny $\pm$ 0.001} & \improve{-0.048} & 0.392{\tiny $\pm$ 0.000} & 0.525{\tiny $\pm$ 0.001} & \improve{+0.133} & 0.162{\tiny $\pm$ 0.001} & 0.152{\tiny $\pm$ 0.000} & \improve{-0.011} \\
+\midrule
+\multirow{6}{*}{SciDocs} & Uncal. & 0.562 & 0.210 & 0.913{\tiny $\pm$ 0.000} & 0.679{\tiny $\pm$ 0.001} & \improve{-0.234} & 0.480{\tiny $\pm$ 0.000} & 0.477{\tiny $\pm$ 0.004} & -0.002 & 0.398{\tiny $\pm$ 0.000} & 0.381{\tiny $\pm$ 0.001} & \improve{-0.017} \\
+ & TS & 0.562 & 0.014 & 0.682{\tiny $\pm$ 0.000} & 0.679{\tiny $\pm$ 0.001} & \improve{-0.003} & 0.480{\tiny $\pm$ 0.000} & 0.476{\tiny $\pm$ 0.006} & -0.003 & 0.398{\tiny $\pm$ 0.000} & 0.382{\tiny $\pm$ 0.002} & \improve{-0.016} \\
+ & DIAG & 0.562 & 0.008 & 0.682{\tiny $\pm$ 0.000} & 0.679{\tiny $\pm$ 0.001} & \improve{-0.003} & 0.480{\tiny $\pm$ 0.000} & 0.476{\tiny $\pm$ 0.007} & -0.004 & 0.398{\tiny $\pm$ 0.000} & 0.382{\tiny $\pm$ 0.003} & \improve{-0.016} \\
+ & Spline & 0.562 & 0.015 & 0.682{\tiny $\pm$ 0.000} & 0.680{\tiny $\pm$ 0.000} & \improve{-0.002} & 0.478{\tiny $\pm$ 0.002} & 0.474{\tiny $\pm$ 0.004} & -0.005 & 0.397{\tiny $\pm$ 0.002} & 0.385{\tiny $\pm$ 0.001} & \improve{-0.012} \\
+ & h-cal & 0.562 & 0.142 & 0.776{\tiny $\pm$ 0.000} & 0.679{\tiny $\pm$ 0.001} & \improve{-0.096} & 0.480{\tiny $\pm$ 0.000} & 0.477{\tiny $\pm$ 0.006} & -0.003 & 0.398{\tiny $\pm$ 0.000} & 0.383{\tiny $\pm$ 0.002} & \improve{-0.015} \\
+ & SMART & 0.562 & 0.016 & 0.681{\tiny $\pm$ 0.000} & 0.680{\tiny $\pm$ 0.001} & \improve{-0.001} & 0.480{\tiny $\pm$ 0.000} & 0.477{\tiny $\pm$ 0.006} & -0.002 & 0.398{\tiny $\pm$ 0.000} & 0.381{\tiny $\pm$ 0.001} & \improve{-0.017} \\
+\midrule
+\multirow{6}{*}{WANDS} & Uncal. & 0.777 & 0.006 & 0.442{\tiny $\pm$ 0.000} & 0.436{\tiny $\pm$ 0.000} & \improve{-0.005} & 0.463{\tiny $\pm$ 0.000} & 0.490{\tiny $\pm$ 0.001} & \improve{+0.026} & 0.091{\tiny $\pm$ 0.000} & 0.088{\tiny $\pm$ 0.000} & \improve{-0.003} \\
+ & TS & 0.777 & 0.006 & 0.442{\tiny $\pm$ 0.000} & 0.436{\tiny $\pm$ 0.000} & \improve{-0.005} & 0.463{\tiny $\pm$ 0.000} & 0.490{\tiny $\pm$ 0.001} & \improve{+0.026} & 0.091{\tiny $\pm$ 0.000} & 0.088{\tiny $\pm$ 0.000} & \improve{-0.003} \\
+ & DIAG & 0.777 & 0.006 & 0.441{\tiny $\pm$ 0.000} & 0.436{\tiny $\pm$ 0.000} & \improve{-0.005} & 0.464{\tiny $\pm$ 0.000} & 0.490{\tiny $\pm$ 0.001} & \improve{+0.026} & 0.091{\tiny $\pm$ 0.000} & 0.088{\tiny $\pm$ 0.000} & \improve{-0.003} \\
+ & Spline & 0.777 & 0.009 & 0.442{\tiny $\pm$ 0.000} & 0.437{\tiny $\pm$ 0.001} & \improve{-0.005} & 0.463{\tiny $\pm$ 0.001} & 0.489{\tiny $\pm$ 0.002} & \improve{+0.025} & 0.091{\tiny $\pm$ 0.000} & 0.088{\tiny $\pm$ 0.000} & \improve{-0.003} \\
+ & h-cal & 0.777 & 0.009 & 0.442{\tiny $\pm$ 0.000} & 0.437{\tiny $\pm$ 0.001} & \improve{-0.005} & 0.464{\tiny $\pm$ 0.000} & 0.490{\tiny $\pm$ 0.001} & \improve{+0.026} & 0.091{\tiny $\pm$ 0.000} & 0.088{\tiny $\pm$ 0.000} & \improve{-0.003} \\
+ & SMART & 0.777 & 0.006 & 0.441{\tiny $\pm$ 0.000} & 0.437{\tiny $\pm$ 0.001} & \improve{-0.005} & 0.463{\tiny $\pm$ 0.000} & 0.489{\tiny $\pm$ 0.001} & \improve{+0.026} & 0.091{\tiny $\pm$ 0.000} & 0.088{\tiny $\pm$ 0.000} & \improve{-0.003} \\
+\midrule
+\multirow{6}{*}{Alloprof-Rerank} & Uncal. & 0.757 & 0.150 & 0.662{\tiny $\pm$ 0.000} & 0.306{\tiny $\pm$ 0.001} & \improve{-0.357} & 0.443{\tiny $\pm$ 0.000} & 0.761{\tiny $\pm$ 0.000} & \improve{+0.318} & 0.099{\tiny $\pm$ 0.000} & 0.059{\tiny $\pm$ 0.000} & \improve{-0.040} \\
+ & TS & 0.757 & 0.044 & 0.467{\tiny $\pm$ 0.000} & 0.300{\tiny $\pm$ 0.001} & \improve{-0.167} & 0.443{\tiny $\pm$ 0.000} & 0.761{\tiny $\pm$ 0.000} & \improve{+0.318} & 0.099{\tiny $\pm$ 0.000} & 0.059{\tiny $\pm$ 0.000} & \improve{-0.040} \\
+ & DIAG & 0.757 & 0.044 & 0.467{\tiny $\pm$ 0.000} & 0.300{\tiny $\pm$ 0.001} & \improve{-0.167} & 0.443{\tiny $\pm$ 0.000} & 0.761{\tiny $\pm$ 0.000} & \improve{+0.318} & 0.099{\tiny $\pm$ 0.000} & 0.059{\tiny $\pm$ 0.000} & \improve{-0.040} \\
+ & Spline & 0.757 & 0.038 & 0.470{\tiny $\pm$ 0.001} & 0.303{\tiny $\pm$ 0.001} & \improve{-0.168} & 0.424{\tiny $\pm$ 0.009} & 0.751{\tiny $\pm$ 0.003} & \improve{+0.327} & 0.101{\tiny $\pm$ 0.001} & 0.059{\tiny $\pm$ 0.000} & \improve{-0.041} \\
+ & h-cal & 0.757 & 0.106 & 0.530{\tiny $\pm$ 0.000} & 0.302{\tiny $\pm$ 0.001} & \improve{-0.228} & 0.443{\tiny $\pm$ 0.000} & 0.761{\tiny $\pm$ 0.000} & \improve{+0.318} & 0.099{\tiny $\pm$ 0.000} & 0.059{\tiny $\pm$ 0.000} & \improve{-0.040} \\
+ & SMART & 0.757 & 0.014 & 0.459{\tiny $\pm$ 0.000} & 0.300{\tiny $\pm$ 0.001} & \improve{-0.159} & 0.443{\tiny $\pm$ 0.000} & 0.761{\tiny $\pm$ 0.000} & \improve{+0.318} & 0.099{\tiny $\pm$ 0.000} & 0.059{\tiny $\pm$ 0.000} & \improve{-0.040} \\
+\bottomrule
+\end{tabular}
+\end{table*}

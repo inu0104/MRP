@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Structural ablation averaged over all relevance-prediction settings. C-NLL denotes \(\mathrm{NLL}_{\mathrm{correct}}\). Variants are defined in Section~\ref{sec:ablation_variants}. MRP denotes the main label-wise 1D projection.}
+\label{tab:mrp_ablation_results}
+\setlength{\tabcolsep}{2.7pt}
+\begin{tabular}{lrrrr}
+\toprule
+Variant & C-NLL$\downarrow$ & AUPR-Error$\uparrow$ & AURC$\downarrow$ & SelAcc@50$\uparrow$ \\
+\midrule
+Conf. & 0.6181 & 0.4876 & 0.2775 & 0.7279 \\
+Shared 1D & 0.5720 & 0.4876 & 0.2775 & 0.7279 \\
+Label-only intercept & 0.5132 & 0.6160 & 0.2302 & 0.7773 \\
+Per-label isotonic & 0.5166 & 0.6148 & 0.2294 & 0.7782 \\
+\textbf{MRP (Label-wise 1D)} & 0.4977 & \textbf{0.6185} & \textbf{0.2273} & \textbf{0.7800} \\
+Label-wise 2D & \textbf{0.4975} & 0.6184 & 0.2274 & 0.7795 \\
+\bottomrule
+\end{tabular}
+\end{table}
